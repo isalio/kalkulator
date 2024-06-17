@@ -24,7 +24,7 @@ umn.onclick = function () {
   action = '*';
 }
 
-ravno.onclick = function () {
+function schet() {
   if (action === '+') {
     const sum = Number(input1.value) + Number(input2.value);
     otvet.textContent = sum;
@@ -39,3 +39,11 @@ ravno.onclick = function () {
     otvet.textContent = sum;
   }
 }
+
+ravno.onclick = schet;
+
+document.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    schet();
+  }
+})
